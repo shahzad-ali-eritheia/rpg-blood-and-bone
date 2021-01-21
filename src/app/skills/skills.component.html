@@ -1,0 +1,26 @@
+<div class="box">
+  <h5>Skills</h5>
+  <div class="baseAttributes skills-chart">
+    <div class="mb-2" *ngFor="let baseAttribute of baseAttributeSkills | keyvalue: 0">
+      <h6>{{baseAttribute.key | titlecase}}</h6>
+      <div class="skills">
+        <div *ngFor="let skill of baseAttribute.value">
+          <div class="info-card">
+            <div class="d-flex justify-content-between">
+              <div class="skill-name">
+                {{skill}}
+              </div>
+              <div class="skill-ranks">
+                <span *ngFor="let rank of skillRanks | keyvalue">
+                  <span class="rank {{skillAcquired(baseAttribute.key, skill, rank.key)}}" data-toggle="tooltip" data-placement="top" title="{{rank.value}}">
+                    {{rank.key}}
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="box">
+  <h5>Base Attributes</h5>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input #strength name="strength" type="number" id="strength" class="input-control" placeholder="Strength" autocomplete="off" min="0" (keyup)="emitStrength(strength.value)" ngModel>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input #dexterity name="dexterity" type="number" id="dexterity" class="input-control" placeholder="Dexterity" autocomplete="off" min="0" (keyup)="emitDexterity(dexterity.value)" ngModel>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input #mind name="mind" type="number" id="mind" class="input-control" placeholder="Mind" autocomplete="off" min="0" (keyup)="emitMind(mind.value)" ngModel>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input #presence name="presence" type="number" id="presence" class="input-control" placeholder="Presence" autocomplete="off" min="0" (keyup)="emitPresence(presence.value)" ngModel>
+      </div>
+    </div>
+  </div>
+</div>

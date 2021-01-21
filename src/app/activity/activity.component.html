@@ -1,0 +1,16 @@
+<div class="box">
+  <h5>Activity</h5>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <input #damage name="damage" type="number" id="damage" class="input-control" placeholder="Damage" autocomplete="off" min="0" (keyup)="emitDamage(damage.value)" ngModel>
+      </div>
+    </div>
+
+    <div class="col-sm-12">
+      <div class="form-group">
+        <input #tenacity name="tenacity" type="number" id="tenacity" class="input-control" placeholder="Tenacity Received Or Used" autocomplete="off" min="0" (keyup)="emitTenacity(tenacity.value)" ngModel>
+      </div>
+    </div>
+  </div>
+</div>
