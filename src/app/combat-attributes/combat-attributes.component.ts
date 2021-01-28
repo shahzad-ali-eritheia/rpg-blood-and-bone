@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-combat-attributes',
@@ -6,58 +6,58 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./combat-attributes.component.sass']
 })
 
-export class CombatAttributesComponent implements OnInit {
-  constructor() { }
+export class CombatAttributesComponent implements OnInit, OnChanges {
+  //////////////////// Prop Inputs ////////////////////
+  @Input() strength: any;
+  @Input() dexterity: any;
+  @Input() mind: any;
+  @Input() presence: any;
+  @Input() damage: any;
+  @Input() tenacity: any;
 
   //////////////////// LifeCycle Callbacks ////////////////////
+  constructor() { }
+
   ngOnInit(): void {
   }
 
-  ngOnChanges(changes: any) {
-    this.strength  = parseInt(this.strength);
-    this.dexterity = parseInt(this.dexterity);
-    this.mind      = parseInt(this.mind);
-    this.presence  = parseInt(this.presence);
-    this.damage    = parseInt(this.damage);
-    this.tenacity  = parseInt(this.tenacity);
+  ngOnChanges(changes: any): void {
+    this.strength  = parseInt(this.strength,  10);
+    this.dexterity = parseInt(this.dexterity, 10);
+    this.mind      = parseInt(this.mind,      10);
+    this.presence  = parseInt(this.presence,  10);
+    this.damage    = parseInt(this.damage,    10);
+    this.tenacity  = parseInt(this.tenacity,  10);
   }
 
-  //////////////////// Prop Inputs ////////////////////
-  @Input() strength:  any;
-  @Input() dexterity: any;
-  @Input() mind:      any;
-  @Input() presence:  any;
-  @Input() damage:    any;
-  @Input() tenacity:  any;
-
   //////////////////// Main Methods ////////////////////
-  getVitality() {
+  getVitality(): any {
     if (isNaN(this.strength)) {
       return '';
     } else {
-      var _vitality = (this.strength + 3);
-      return isNaN(this.damage) ? _vitality : (_vitality - this.damage);
+      const Vitality = (this.strength + 3);
+      return isNaN(this.damage) ? Vitality : (Vitality - this.damage);
     }
   }
 
-  getEvasion() {
+  getEvasion(): any {
     return isNaN(this.dexterity) ? '' : (this.dexterity + 10);
   }
 
-  getArmor() {
+  getArmor(): any {
     return this.getEvasion();
   }
 
-  getAlacrity() {
+  getAlacrity(): any {
     return (isNaN(this.dexterity) || isNaN(this.mind)) ? '' : (this.dexterity + this.mind);
   }
 
-  getTenacity() {
+  getTenacity(): any {
     if (isNaN(this.presence)) {
       return '';
     } else {
-      var _tenacity = this.presence + 1;
-      return isNaN(this.tenacity) ? _tenacity : (_tenacity + this.tenacity);
+      const Tenacity = this.presence + 1;
+      return isNaN(this.tenacity) ? Tenacity : (Tenacity + this.tenacity);
     }
   }
 }

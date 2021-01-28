@@ -7,17 +7,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 
 export class CharacterComponent implements OnInit {
-  constructor() { }
-
-  //////////////////// LifeCycle Callbacks ////////////////////
-  ngOnInit(): void {
-  }
-
   //////////////////// Emitter Outputs ////////////////////
   @Output() characterEmitter = new EventEmitter();
 
+  //////////////////// LifeCycle Callbacks ////////////////////
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
   //////////////////// Main Methods ////////////////////
-  emitCharacterName(name) {
-    this.characterEmitter.emit(name)
+  emitCharacterName(name): void {
+    this.characterEmitter.emit(name);
   }
 }

@@ -7,22 +7,22 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 
 export class ActivityComponent implements OnInit {
-  constructor() { }
-
-  //////////////////// LifeCycle Callbacks ////////////////////
-  ngOnInit(): void {
-  }
-
   //////////////////// Emitter Outputs ////////////////////
   @Output() damageEmitter   = new EventEmitter();
   @Output() tenacityEmitter = new EventEmitter();
 
+  //////////////////// LifeCycle Callbacks ////////////////////
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
   //////////////////// Main Methods ////////////////////
-  emitDamage(damage) {
+  emitDamage(damage): void {
     this.damageEmitter.emit(damage);
   }
 
-  emitTenacity(tenacity) {
+  emitTenacity(tenacity): void {
     this.tenacityEmitter.emit(tenacity);
   }
 }

@@ -17,31 +17,31 @@ export class AppComponent {
   tenacity;
 
   //////////////////// Main Methods ////////////////////
-  characterNameReceived(data) {
+  characterNameReceived(data): void {
     this.characterName = data;
   }
 
-  strengthReceived(data) {
+  strengthReceived(data): void {
     this.strength = data;
   }
 
-  dexterityReceived(data) {
+  dexterityReceived(data): void {
     this.dexterity = data;
   }
 
-  mindReceived(data) {
+  mindReceived(data): void {
     this.mind = data;
   }
 
-  presenceReceived(data) {
+  presenceReceived(data): void {
     this.presence = data;
   }
 
-  damageReceived(data) {
+  damageReceived(data): void {
     this.damage = data;
   }
 
-  tenacityReceived(data) {
+  tenacityReceived(data): void {
     this.tenacity = data;
   }
 }

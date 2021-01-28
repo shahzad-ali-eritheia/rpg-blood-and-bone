@@ -7,16 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 
 export class DetailsComponent implements OnInit {
-  constructor() { }
-
-  //////////////////// LifeCycle Callbacks ////////////////////
-  ngOnInit(): void {
-  }
-
   //////////////////// Prop Inputs ////////////////////
   @Input() characterName: any;
-  @Input() strength:      any;
-  @Input() dexterity:     any;
-  @Input() mind:          any;
-  @Input() presence:      any;
+  @Input() strength: any;
+  @Input() dexterity: any;
+  @Input() mind: any;
+  @Input() presence: any;
+
+  //////////////////// LifeCycle Callbacks ////////////////////
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 }
